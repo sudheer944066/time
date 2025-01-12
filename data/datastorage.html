@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage</title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button class="save-button">Save</button>
+    <button class="load-button">Load</button>
+    <button class="clear-button">Clear</button>
+    <p class="hi"> </p>
+    <script> 
+        document.querySelector('.save-button').addEventListener('click', () => {
+            console.log("hi")
+            let savename = document.getElementById('name').value;
+            localStorage.setItem('name',savename);
+        })
+        document.querySelector('.load-button').addEventListener('click', () => {
+            document.querySelector('.hi').innerHTML = localStorage.getItem('name');
+        })
+        document.querySelector('.clear-button').addEventListener('click',() => {
+            localStorage.removeItem('name')
+          document.querySelector('.hi').innerHTML ='data clear';
+
+        })
+    </script>
+</body>
+  
+</html>
